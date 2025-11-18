@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Gestion des taches</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <label> jour affiche :</label>
+
+            <span th:text="${listtaches.nomDuJourAffiche()}"></span>
+            <br>
+            <form method="post" action="updatetache">
+                <label>Tahces pour le jour afiche</label>
+                <input type="text" name="tache" th:value="${listtaches.tachesDuJourAffiche()}"> 
+                <br>
+                <button type="submit">Mettre a jour les taches  pour le jour affiche </button>
+            </form>
+            <br>
+            <form method="post" action="joursuivant"> 
+                <button type="submit">affiche le jour suivant</button>
+            </form>
+            <br>
+            <form method="post" action="jourprecedent">
+                <button type="submit">affiche le jour precedent</button>
+            </form>
+            <br>
+            <form method="post" action="supprimertaches">
+                <button type="submit">Supprimer toutes les taches</button>
+            </form>
+
+        </div>
+    </body>
+</html>
